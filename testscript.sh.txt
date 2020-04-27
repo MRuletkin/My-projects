@@ -1,0 +1,9 @@
+#!/bin/bash
+ls -lR /home>1.txt;
+sed 's/mykhailo_litvinov/nikita/g' 1.txt>2.txt;
+awk '{gsub("mykhailo_litvinov","nikita",$0); print > "3.txt"}' 1.txt;
+sed '/total/d' 1.txt>4.txt;
+awk '{print $6,$7,$9}' 1.txt>5.txt;
+awk '{print $3}' 5.txt | grep [0-9]>6.txt;
+awk '/.txt'{print $3}' 5.txt>7.txt
+
