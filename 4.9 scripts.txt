@@ -1,0 +1,31 @@
+4.9.4
+#!/bin/bash
+d=`ls $HOME -F | grep /`
+n=`echo $d | wc -w`
+echo "My home directory has $n directories: "$d""
+
+4.9.5
+#!/bin/bash
+echo -n "do you want to calculate letters? "
+read
+answer=$REPLY
+ if [ $answer = "yes" ]
+  then echo -n "input the word: "
+read
+word=$REPLY
+echo $word | awk '{print lenght}'
+ else echo "as you wish("
+fi
+
+4.9.7
+#!/bin/bash
+if [ -n "$3" ]
+then
+echo "A lot of parametrs"
+else
+ if [ $1 -gt $2 ]
+ then
+ echo "$1"
+ else "$2"
+ fi
+fi
