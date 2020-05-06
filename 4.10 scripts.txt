@@ -1,0 +1,23 @@
+4.10.1
+#!/bin/bash
+answer=word
+until [ $answer = "quit" ]
+do
+echo -n "enter something: "
+read
+answer=$REPLY
+echo $answer
+done
+
+4.10.2
+#!/bin/bash
+file=dateps.txt
+touch $HOME/tmp $file
+date
+ps | wc
+while :
+do
+date>>$file
+ps | wc -l>>$file
+sleep 60
+done
