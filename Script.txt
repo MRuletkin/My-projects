@@ -1,0 +1,11 @@
+#!/bin/bash
+file=users.txt
+echo $passwd
+while IFS=: read u x nn rest; do
+if [ $nn -ge 500 ];
+then
+passwd=`openssl rand -base64 5`
+echo $passwd |passwd $u;
+echo «$u = $passwd» >> $file
+fi
+done < /etc/passwd
